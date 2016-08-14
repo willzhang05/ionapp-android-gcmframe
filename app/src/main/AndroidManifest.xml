@@ -38,6 +38,16 @@
         </receiver>
         <!-- [END gcm_receiver] -->
 
+        <receiver android:name="edu.tjhsst.ion.gcmFrame.ScheduleWidgetProvider" android:label="@string/schedule_widget_name" >>
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/schedule_widget_info" />
+        </receiver>
+
+        <service android:name="edu.tjhsst.ion.gcmFrame.WebShotService" />
+
         <!-- [START gcm_listener] -->
         <service
             android:name="edu.tjhsst.ion.gcmFrame.MyGcmListenerService"
